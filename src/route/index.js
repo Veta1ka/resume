@@ -5,6 +5,38 @@ const router = express.Router()
 
 // ================================================================
 
+var header = {
+  name: {
+    firstname: 'Ivan',
+    lastname: 'Ivanyuk',
+  },
+
+  position: 'Junior Fullstack JS Developer',
+
+  salary: '$600 per month',
+
+  address: 'Braiton Beach 11',
+}
+
+var footer = {
+  social: {
+    email: {
+      text: 'ivanyuk@mail.com',
+      href: 'mailto:ivanyuk@mail.com',
+    },
+    phone: {
+      text: '+38056099895',
+      href: 'tel: +38056099895',
+    },
+    linkedin: {
+      href: 'https://www.linkedin.com',
+      text: 'LinkedIn',
+    },
+  },
+}
+
+// ================================================================
+
 // router.get Створює нам один ентпоїнт
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
@@ -23,10 +55,299 @@ router.get('/summary', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('summary', {
     // ↙ сюди вводимо JSON дані
+
+    page: {
+      title: 'Resume > summary',
+    },
+
+    header,
+
+    main: {
+      summary: {
+        title: 'Summary',
+        text: `Open-minded for new technologies, with 1 years of experience in development. Whenever I start to
+              work on a new project I learn the domain and try to understand the idea of the project. Good team
+              player, every colleague is a friend to me.`,
+      },
+      experience: {
+        title: 'Other experience',
+        text: `Pet project for parsing sport betting data from different platforms ( odds ) and sport statistics (
+          tournament position, goals etc), analyzing by simple mathematics models and preparing probability
+          for such events like: money line - first win / draw / second win, totals etc.`,
+      },
+    },
+    footer,
   })
 })
 
 // ================================================================
+
+//              ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/skills', function (req, res) {
+  //             ↙ cюди вводимо назву файлу з сontainer
+  res.render('skills', {
+    // ↙ сюди вводимо JSON дані
+
+    page: {
+      title: 'Resume > skills',
+    },
+
+    header,
+
+    main: {
+      title: 'All skills',
+      skills: [
+        {
+          name: 'HTML',
+          point: 10,
+          isTop: true,
+        },
+        {
+          name: 'Handlebars',
+          point: 8,
+          isTop: false,
+        },
+        {
+          name: 'VS Code',
+          point: 7,
+        },
+        {
+          name: 'Git',
+          point: 9,
+          isTop: true,
+        },
+        {
+          name: 'React.js',
+          point: 0,
+        },
+        {
+          name: 'PHP',
+          point: null,
+        },
+      ],
+      hobbies: [
+        { name: 'Hunter', isMain: true },
+        { name: 'Drink', isMain: false },
+        { name: 'Drive', isMain: true },
+      ],
+    },
+    footer,
+  })
+})
+// ================================================================
+
+//              ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/education', function (req, res) {
+  //             ↙ cюди вводимо назву файлу з сontainer
+  res.render('education', {
+    // ↙ сюди вводимо JSON дані
+
+    page: {
+      title: 'Resume > education',
+    },
+
+    header,
+
+    main: {
+      title: 'My education',
+
+      education: [
+        {
+          name: 'HTML educational institution',
+          isEnd: true,
+        },
+        {
+          name: 'Handlebars educational institution',
+          isEnd: true,
+        },
+        {
+          name: 'VS Code educational institution',
+          isEnd: true,
+        },
+        {
+          name: 'Git educational institution',
+          isEnd: false,
+        },
+        {
+          name: 'Terminal educational institution',
+          isEnd: true,
+        },
+        {
+          name: 'NPM educational institution',
+          isEnd: false,
+        },
+      ],
+
+      certificates: [
+        { name: 'Ivan', id: 12 },
+        { name: 'Inga', id: 10 },
+        { name: 'Igor', id: 7 },
+      ],
+    },
+
+    footer,
+  })
+})
+// ================================================================
+
+//              ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/work', function (req, res) {
+  //             ↙ cюди вводимо назву файлу з сontainer
+  res.render('work', {
+    // ↙ сюди вводимо JSON дані
+
+    layout: 'big',
+
+    page: {
+      title: 'Resume > work',
+    },
+
+    header,
+
+    main: {
+      works: [
+        {
+          position: 'Junior fullstack Developer',
+          company: {
+            name: 'Ukrainian Kosmos',
+            url: 'https://kosmos-ukraine.gov.ua/',
+          },
+          duration: {
+            from: '10.10.2022',
+            to: null,
+          },
+          projectAmount: 3,
+
+          projects: [
+            {
+              name: 'Resume',
+              url: 'https://resume.in.ua/',
+              about: 'For uses Ukrainian Rocket',
+              stacks: [
+                {
+                  name: 'React.js',
+                },
+                {
+                  name: 'HTML /CSS',
+                },
+                {
+                  name: 'Node.js',
+                },
+              ],
+              awards: [
+                {
+                  name: 'Abra-Kadabra FLY!',
+                },
+                {
+                  name: 'The Best Idea!',
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+
+    footer,
+  })
+})
+// ================================================================
+router.get('/person', function (req, res) {
+  //             ↙ cюди вводимо назву файлу з сontainer
+  res.render('person', {
+    person: {
+      name: 'Emma Johnson',
+      age: 32,
+      gender: 'Female',
+      address: {
+        street: '123 Main St',
+        city: 'New York',
+        state: 'NY',
+        zip: '10001',
+        country: 'USA',
+      },
+      education: [
+        {
+          degree: 'Bachelor of Science',
+          major: 'Computer Science',
+          university:
+            'Massachusetts Institute of Technology',
+          graduationYear: 2012,
+        },
+      ],
+      workExperience: [
+        {
+          company: 'Google',
+          title: 'Software Engineer',
+          startDate: '2012-06-01',
+          endDate: '2016-12-31',
+          responsibilities: [
+            'Developed new features for Google Maps',
+            'Worked on improving search algorithms',
+          ],
+          year_founded: 1990,
+          industry: 'Technology',
+          employees: [
+            {
+              name: 'John Smith',
+              position: 'CEO',
+              department: 'Executive',
+              projects: [
+                {
+                  name: 'Project Alpha',
+                  description:
+                    'Developing new software platform',
+                  status: 'In Progress',
+                  teams: [
+                    {
+                      team_name: 'Awesome Team',
+                      team_leader: {
+                        name: 'John Smith',
+                        title: 'Team Leader',
+                        email: 'john.smith@example.com',
+                      },
+                      team_members: [
+                        {
+                          name: 'Alice Johnson',
+                          title: 'Software Engineer',
+                          email:
+                            'alice.johnson@example.com',
+                          skills: ['Java', 'Python', 'SQL'],
+                          projects: [
+                            {
+                              name: 'Project A',
+                              description:
+                                'Lorem ipsum dolor sit amet',
+                              technologies: [
+                                'Java',
+                                'Spring Framework',
+                              ],
+                              team_members: [
+                                {
+                                  name: 'Bob Lee',
+                                  title:
+                                    'Software Engineer',
+                                },
+                                {
+                                  name: 'Cindy Chen',
+                                  title: 'UI Designer',
+                                },
+                              ],
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+  })
+})
 
 // Підключаємо роутер до бек-енду
 module.exports = router
