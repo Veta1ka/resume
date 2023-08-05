@@ -252,9 +252,12 @@ router.get('/work', function (req, res) {
   })
 })
 // ================================================================
+
+//              ↙ тут вводимо шлях (PATH) до сторінки
 router.get('/person', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('person', {
+    layout: 'person',
     person: {
       name: 'Emma Johnson',
       age: 32,
@@ -349,5 +352,6 @@ router.get('/person', function (req, res) {
   })
 })
 
+// ================================================================
 // Підключаємо роутер до бек-енду
 module.exports = router
