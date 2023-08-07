@@ -1,0 +1,58 @@
+<div>
+  <center><h1>Web coding</h1></center>
+  {{#with web}}
+    {{#each languages}}
+      <hr>
+      <p>
+        <b>What is studied:</b> {{name}} ver.({{version}}) - {{description}}
+        {{#each elements}}
+          <br>
+          <br>
+          <b>Studied teg: </b>
+          <br>
+          <br>
+          <code><_{{name}}_></code> - <i>{{description}}</i>
+          <br>
+          <br>
+          <i>Attributes: </i> 
+          <ul>
+            {{#each attributes}} 
+              <code>({{name}})</code> - {{description}}
+              <br>
+            {{/each}}
+          </ul>
+        {{/each}}
+      </p>
+      <p>
+        <ul>
+          {{#each properties}}
+            <br>
+            (<code>{{name}}</code>) - <i>{{description}}</i>
+            <ul>
+              {{#each values}}
+                <br>
+                ({{value}}) - {{description}}
+              {{/each}}
+            </ul>
+          {{/each}}
+        </ul>
+      </p>
+      <p>
+        <ul>
+          {{#each functions}}
+            [ <code>{{name}}</code> ] - <i>{{description}}</i>
+            <br>
+            <br>
+            <ul>
+              {{#each parameters}}
+                <code>{{name}}</code> ({{type}}) - {{description}}
+                <br>
+                <br>
+              {{/each}}
+            </ul>
+          {{/each}}
+        </ul>
+      </p>
+    {{/each}}
+  {{/with}}
+</div>
