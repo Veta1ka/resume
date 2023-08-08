@@ -1,0 +1,40 @@
+<div>
+  <center><h1>{{name}}</h1></center> 
+  <hr>
+  <b>{{name}}</b> - <i>{{description}}</i>. Foundation in 
+  {{#with history}}
+    {{year}} ({{founder}})
+  {{/with}}
+  <br>
+  <br>
+  <b>Uses the following data types:</b>
+  <ul>
+    {{#each types}}
+      <li>{{this}}</li>
+    {{/each}}
+    <br>
+    <b>Syntax:</b>
+    {{#with syntax}}
+      <li><i>variables - </i>{{variables}}</li>
+      <li><i>functions - </i>{{functions}}</li>
+      <li><i>conditionals - </i>{{conditionals}}</li>
+      <li><i>loops - </i>{{loops}}</li>
+      <li><i>classes - </i>{{classes}}</li>
+    {{/with}}
+    <br>
+    <b>Features:</b>
+    {{#each features}}
+      <li>{{this}}</li>
+    {{/each}}
+    <br>
+    <b>Libraries:</b>
+    {{#each libraries}}
+      <li>{{this}}</li>
+    {{/each}}
+    <br>
+    <b>Community:</b>
+    {{#each community}}
+      <li>{{name}} ({{type}})</li>
+    {{/each}}
+  </ul>
+</div>
