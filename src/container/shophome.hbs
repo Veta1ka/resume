@@ -1,0 +1,146 @@
+<title>ShopHome</title>
+<main class="m-3">
+  <div class="row g-0 py-3">
+    {{#with navigation}}
+      {{#each links}}
+        <div class="col-2">
+          <div class="nav nav-tabs">
+            <div class="nav-item">
+              <a href="{{href}}" class="nav-link">{{text}}</a>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+      <div class="col-2">
+        <div class="nav nav-tabs">
+          <div class="nav-item">
+            <div class="col-2">
+              <a href="#" class="nav-link disabled">Disabled</a>
+            </div>
+          </div>
+        </div>
+        </div>
+    {{/with }}
+  </div>
+  
+  <div class="row g-3 py-3">
+    {{#with newsBlock}}
+      <h4 class="py-3">{{title}}</h4>
+      {{#each cards}}
+        <section class="col-3">
+          <div class="card text-bg-dark">
+            <div class="card-body">
+              <h6 class="card-title ">
+                {{title}} 
+                {{#if isNew}}
+                  <span class="badge text-bg-success rounded-pill">New</span>
+                {{/if}} 
+                {{#if isTop}}
+                  <span class="badge text-bg-danger rounded-pill">Top</span>
+                {{/if}}
+              </h6>
+              <p class="p-1">{{description}}</p>
+            </div>
+          </div>
+        </section>
+      {{/each}}
+    {{/with}}
+  </div>
+
+  {{#with goodsBlock}}
+    <div class="row g-0 py-3">
+      {{#each tabs}}
+        <div class="col-3 py-3">
+          <div class="nav nav-tabs">
+            <div class="nav-item">
+              <a href="#" class="nav-link {{#if isActive}}active{{/if}} {{#if isDisabled}}disabled{{/if}}">{{text}}</a>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    </div>  
+  
+    <div class="row g-2 py-3">
+      {{#each cards}}
+        <section class="col-4">
+          <div class="card ">
+            <img class="card-img-top" src="{{image}}" alt="{{title}}">
+            <div class="card-body">
+              <h6 class="card-title">
+                {{title}} 
+                {{#if isNew}}
+                      <span class="badge text-bg-success rounded-pill">New</span>
+                    {{/if}} 
+                    {{#if isTop}}
+                      <span class="badge text-bg-danger rounded-pill">Top</span>
+                    {{/if}}
+                </h6>
+              <p class="p-1">{{description}}</p>
+            </div>
+          </div>
+        </section>
+      {{/each}}
+    </div>
+  {{/with}}
+
+  {{#with subscribe}}
+    <div class="row g-12 py-3">
+      <section class="col-12">
+        <div class="card text-bg-dark">
+          <div class="card-header">
+            <h2>{{header}}</h2>
+          </div>
+          <div class="card-body">
+            <p class="p-1">{{description}}</p>
+            {{#each buttons}}
+              <div class="py-1">
+                <a href="{{link}}" class="btn btn-primary">{{text}}</a>
+                <br>
+              </div>
+            {{/each}}
+          </div>
+        </div>
+      </section>
+    </div>
+  {{/with}}
+
+  {{#with service}}
+    <div class="row g-12 py-3">
+      <section class="col-12">
+        <div class="card text-bg-success text-center">
+          <div class="card-header">
+            <h2>{{title}}</h2>
+          </div>
+          <div class="card-body">
+            <p class="p-1">{{description}}</p>
+            {{#each buttons}}
+              <div class="py-1">
+                <a href="{{link}}" class="btn btn-primary">{{text}}</a>
+                <br>
+              </div>
+            {{/each}}
+          </div>
+        </div>
+      </section>
+    </div>
+  {{/with}}
+
+  <section class="col-12">
+    <div class="row g-1">
+      {{#each footer}}
+        <table class="table ">
+          <tbody>
+            <tr>
+              {{#each []}}
+              <td class="col-2 py-0">
+                <a href="{{link}}" class="btn btn-link">{{text}}</a>
+              </td>
+              {{/each}}
+            </tr>
+          </tbody>
+        </table> 
+      {{/each}}
+    </div>
+  </section>
+
+</main>
