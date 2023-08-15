@@ -1,0 +1,164 @@
+<title>ShopCart</title>
+<main class="m-3">
+  
+  <div class="row g-0 py-3">
+    {{#with navigation}}
+      {{#each links}}
+        <div class="col-2">
+          <div class="nav nav-tabs">
+            <div class="nav-item">
+              <a href="{{href}}" class="nav-link">{{text}}</a>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+      <div class="col-2">
+        <div class="nav nav-tabs">
+          <div class="nav-item">
+            <div class="col-2">
+              <a href="#" class="nav-link disabled">Disabled</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    {{/with }}
+  </div>
+
+  <div class="my-3">
+    {{#with header}}
+      <h1>{{title}}</h1>
+      {{#with button}}
+        <a hrerf="{{link}}" class="btn btn-light">{{text}}</a>
+      {{/with}}
+    {{/with}}
+  </div>
+  <hr class="my-3">
+
+  <div class="row g-2 my-1">
+      {{#each goodsBlock}}
+        <section class="col-12">
+          <div class="card">
+            <table class="table align-middle table-borderless">
+              <tbody>
+                <tr>
+                  <td style="width:16%">
+                      <img class="card-img-top" src="{{image}}" alt="{{name}}">
+                  </td>
+                  <td style="width:34%">
+                        <h6 >{{name}} </h6>
+                        <p >{{description}}</p>
+                  </td>
+                  <td style="width:17%">
+                      {{#with price}}  
+                        <p>{{title}}</p>
+                        <h6>{{value}}</h6>
+                      {{/with}}
+                  </td>
+                    </div>
+                  <td style="width:16%">
+                    {{amount}}
+                  </td>
+                  <td>
+                    {{#each buttons}}
+                      <button 
+                        {{#if isPrimary}}class="btn btn-primary m-1" 
+                        {{else}}class="btn btn-outline-primary m-1"
+                        {{/if}}
+                         {{#if isDanger}}class="btn btn-danger m-1" 
+                        {{else}}class="btn btn-outline-danger m-1"
+                        {{/if}}>
+                        {{text}}
+                      </button>
+                    {{/each}}
+                  </td>
+                </tr>
+              </tbody>
+            </table>  
+          </div>
+        </section>
+      {{/each}}
+    </div>
+    <hr class="my-3">
+
+    <div class="col-12 m-3">
+      {{#with total}}
+        <h4>{{title}}</h4>
+        <h2>{{amount}}</h2>
+        <p>{{delivery}}</p>
+        {{#each buttons}}
+          <a href="{{link}}" 
+            {{#if isSuccess}}class="btn btn-success my-2" 
+            {{else}}class="btn btn-outline-success"
+            {{/if}}
+            {{#if isOutline}}class="btn btn-success my-2"
+            {{else}}class="btn btn-outline-success "
+            {{/if}}>
+            {{text}}
+          </a>
+          <br class="m-2">
+        {{/each}}
+      {{/with}}
+    </div>
+    <hr class="my-3">
+
+    <div class="row g-2 py-3">
+      {{#with goodsOtherBlock}}
+        <h4 class="text text-center">{{title}}</h4>
+        {{#each cards}}
+          <section class="col-4">
+            <div class="card ">
+              <img class="card-img-top" src="{{image}}" alt="{{title}}">
+              <div class="card-body">
+                <h6 class="card-title">
+                  {{title}} 
+                  {{#if isNew}}
+                    <span class="badge text-bg-success rounded-pill">New</span>
+                  {{/if}} 
+                  {{#if isHot}}
+                    <span class="badge text-bg-primary rounded-pill">HOT!</span>
+                  {{/if}}
+                </h6>
+                <p class="p-1">{{description}}</p>
+              </div>
+            </div>
+          </section>
+        {{/each}}
+      {{/with}}
+    </div>
+    <hr class="my-3">
+
+    <div class="col-12 m-3">
+      {{#with subscribe}}
+        <h2>{{header}}</h2>
+        <p>{{description}}</p>
+        {{#each buttons}}
+          <a href="{{link}}" 
+          class="btn btn-primary my-2" 
+            >
+            {{text}}
+          </a>
+          <br class="m-2">
+        {{/each}}
+      {{/with}}
+    </div>
+    <hr class="my-3">
+
+    <section class="col-12">
+    <div class="row g-1">
+      {{#each footer}}
+        <table class="table ">
+          <tbody>
+            <tr>
+              {{#each []}}
+              <td class="col-2 py-0">
+                <a href="{{link}}" class="btn btn-link">{{text}}</a>
+              </td>
+              {{/each}}
+            </tr>
+          </tbody>
+        </table> 
+      {{/each}}
+    </div>
+  </section>
+
+</main>
