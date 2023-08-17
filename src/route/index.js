@@ -7,26 +7,26 @@ const router = express.Router()
 
 var header = {
   name: {
-    firstname: 'Ivanna',
-    lastname: 'Ivanyuk',
+    firstname: 'Vitaly',
+    lastname: 'Drach',
   },
 
   position: 'Junior Fullstack JS Developer',
 
   salary: '$600 per month',
 
-  address: 'Braiton Beach 11',
+  address: 'Ukraine, city of Chernivtsi',
 }
 
 var footer = {
   social: {
     email: {
-      text: 'ivanyuk@mail.com',
-      href: 'mailto:ivanyuk@mail.com',
+      text: 'drachvitaly22@gmail.com',
+      href: 'mailto:drachvitaly22@gmail.com',
     },
     phone: {
-      text: '+38056099895',
-      href: 'tel: +38056099895',
+      text: '+380953294287',
+      href: 'tel: +380953294287',
     },
     linkedin: {
       href: 'https://www.linkedin.com',
@@ -2745,6 +2745,177 @@ router.get('/shopreview', function (req, res) {
         },
       ],
     ],
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
+// ================================================================
+
+//           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/bootstrap6', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('bootstrap6', {
+    layout: 'bootstrap',
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
+// ================================================================
+
+//           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/index', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('index', {
+    layout: 'index',
+    page: {
+      title: 'Start page',
+    },
+
+    header,
+
+    name: 'List of pages',
+    text: 'In this project, training in the development and creation of HTML pages was carried out',
+    tasks: 'Completed tasks:',
+
+    section: [
+      {
+        link: '/summary',
+        nameb: 'Summary',
+        about: ' - Резюме',
+      },
+      {
+        link: '/skills',
+        nameb: 'Skills',
+        about: ' - Навички',
+      },
+      {
+        link: '/education',
+        nameb: 'Education',
+        about: ' - Освіта',
+      },
+      {
+        link: '/work',
+        nameb: 'Work',
+        about: ' - Робота',
+      },
+      {
+        link: '/person',
+        nameb: 'Person',
+        about: ' - Людина',
+      },
+      {
+        link: '/bio',
+        nameb: 'Biography',
+        about: ' - Біографія',
+      },
+      {
+        link: '/program',
+        nameb: 'Excursion',
+        about: ' - Програма екскурсії',
+      },
+      {
+        link: '/web',
+        nameb: 'Web',
+        about: ' - Інтернет',
+      },
+      {
+        link: '/js',
+        nameb: 'Java Script',
+        about: ' - Інфа про JS',
+      },
+      {
+        link: '/car',
+        nameb: 'Car',
+        about: ' - Інфа про машину',
+      },
+      {
+        link: '/mac',
+        nameb: 'MacBook',
+        about: ' - Інфа про MacBook',
+      },
+      {
+        link: '/facebook',
+        nameb: 'Facebook',
+        about: ' - Як Фейсбук',
+      },
+    ],
+    section1: [
+      {
+        link: '/task21',
+        nameb: 'Task 2.1',
+        about: ' - Завдання 2.1',
+      },
+      {
+        link: '/task22',
+        nameb: 'Task 2.2',
+        about: ' - Завдання 2.2',
+      },
+      {
+        link: '/task31',
+        nameb: 'Task 3.1',
+        about: ' - Завдання 3.1',
+      },
+      {
+        link: '/shophome',
+        nameb: 'Shop home',
+        about: ' - Магазин додому',
+      },
+      {
+        link: '/shoporder',
+        nameb: 'Shoporder',
+        about: ' - Замовлення в магазині',
+      },
+      {
+        link: '/shopcart',
+        nameb: 'Shopcart',
+        about: ' - Кошик',
+      },
+      {
+        link: '/shopreview',
+        nameb: 'Shop review',
+        about: ' - Огляд магазину',
+      },
+      {
+        link: '/index',
+        nameb: 'List of page',
+        about: ' - Ця сторінка',
+        smile: true,
+      },
+    ],
+
+    subtask: 'Klass work:',
+    section2: [
+      {
+        link: '/bootstrap1',
+        nameb: 'bootstrap1',
+      },
+      {
+        link: '/bootstrap2',
+        nameb: 'bootstrap2',
+      },
+      {
+        link: '/bootstrap3',
+        nameb: 'bootstrap3',
+      },
+      {
+        link: '/bootstrap4',
+        nameb: 'bootstrap4',
+      },
+      {
+        link: '/bootstrap5',
+        nameb: 'bootstrap5',
+      },
+      {
+        link: '/bootstrap6',
+        nameb: 'bootstrap6',
+      },
+    ],
+
+    footer,
   })
   //                  ↑↑ сюди вводимо JSON дані
 })

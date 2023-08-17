@@ -196,7 +196,7 @@
 
                 <div>
                   {{#each coments}}
-                    <div class="card m-3 ms-5 ">
+                    <div class="card m-3 ">
                       <div class="card-body">
                         <h6>{{userName}}</h6>
                         <date>{{date}}</date>
@@ -213,5 +213,37 @@
       {{/each}}
     </div>
   </div>
+
+  <div class="m-3 g-0 text-bg-success text-center">
+      {{#with service}}
+        <h2>{{title}}</h2>
+        <p>{{description}}</p>
+        {{#each buttons}}
+          <a href="{{link}}" class="btn btn-primary my-2">
+            {{text}}
+          </a>
+        {{/each}}
+      {{/with}}
+    </div>
+    <hr class="my-3">
+
+    <section class="col-12">
+      <div class="row g-1">
+        {{#each footer}}
+          <table class="table ">
+            <tbody>
+              <tr>
+                {{#each []}}
+                <td class="col-2 py-0">
+                  <a href="{{link}}" class="btn btn-link">{{text}}</a>
+                </td>
+                {{/each}}
+              </tr>
+            </tbody>
+          </table> 
+        {{/each}}
+      </div>
+    </section>
+
 
 </main>

@@ -4,9 +4,145 @@
  --}}
 
 <div class="p-5">
-    <h1>USB хаб Type C 12 в 1 HDMI VGA AUX 3.5 mm</h1>
+  <div>
+    <h1>{{name}}</h1>
+    <p class="display-6">{{text}}</p>
+  </div>
+  <hr>
 
-    <button type="button" class="btn btn-primary">Купити</button>
+    <h3 class="mt-5">{{tasks}}</h3>
+  <section class="row g-2 m-2"> 
+
+    <div class="row g-2 col-6">
+      {{#each section}}
+        <div class="row p-1 col-5">
+          <a href="{{link}}" class="btn btn-primary">{{nameb}}</a>
+        </div> 
+        <div class="col-6 p-1 m-2 ">{{about}}</div>
+      {{/each}}
+
+      {{!-- <div class="row p-1 col-5">
+        <a href="/skills" class="btn btn-primary">Skills</a>
+      </div> 
+      <div class="col-6 p-1 m-2"> - Навички</div>
+
+      <div class="row p-1 col-5">
+        <a href="/education" class="btn btn-primary">Education</a>
+      </div> 
+      <div class="col-6 p-1 m-2"> - Освіта</div>
+      
+      <div class="row p-1 col-5">
+        <a href="/work" class="btn btn-primary">Work</a>
+      </div> 
+      <div class="col-6 p-1 m-2"> - Робота</div>
+      
+      <div class="row p-1 col-5">
+        <a href="/person" class="btn btn-primary">Person</a>
+      </div> 
+      <div class="col-6 p-1 m-2"> - Людина</div>
+      
+      <div class="row p-1 col-5">
+        <a href="/bio" class="btn btn-primary">Biography</a>
+      </div> 
+      <div class="col-6 p-1 m-2"> - Біографія</div>
+
+      <div class="row p-1 col-5">
+        <a href="/program" class="btn btn-primary">Excursion</a>
+      </div> 
+      <div class="col-6 p-1 m-2"> - Програма екскурсії</div>
+
+      <div class="row p-1 col-5">
+        <a href="/web" class="btn btn-primary">Web</a>
+      </div> 
+      <div class="col-6 p-1 m-2"> - Інтернет</div>
+
+      <div class="row p-1 col-5">
+        <a href="/js" class="btn btn-primary">Java Script</a>
+      </div> 
+      <div class="col-6 p-1 m-2"> - Інфа про JS</div>
+
+      <div class="row p-1 col-5">
+        <a href="/car" class="btn btn-primary">Car</a>
+      </div> 
+      <div class="col-6 p-1 m-2"> - Інфа про машину</div>
+
+      <div class="row p-1 col-5">
+        <a href="/mac" class="btn btn-primary">MacBook</a>
+      </div> 
+      <div class="col-6 p-1 m-2"> - Інфа про MacBook</div>
+
+      <div class="row p-1 col-5">
+        <a href="/facebook" class="btn btn-primary">Facebook</a>
+      </div> 
+      <div class="col-6 p-1 m-2"> - Як Фейсбук</div> --}}
+
+    </div>
+
+    <div class="row g-2 col-6">
+      {{#each section1}}
+        <div class="row p-1 col-5">
+          <a href="{{link}}" class="btn btn-primary">{{nameb}}</a>
+        </div> 
+        <div class="col-6 p-1 m-2 ">
+          {{#if smile}}{{about}} <i class="bi bi-emoji-heart-eyes-fill"></i>
+          {{else}}{{about}}
+          {{/if}}
+        </div>
+      {{/each}}
+
+      {{!-- <div class="row p-1 col-5">
+        <a href="/task21" class="btn btn-primary">Task 2.1</a>
+      </div> 
+      <div class="col-6 p-1 m-2"> - Завдання 2.1</div>
+
+      <div class="row p-1 col-5">
+        <a href="/task22" class="btn btn-primary">Task 2.2</a>
+      </div> 
+      <div class="col-6 p-1 m-2 "> - Завдання 2.2</div>
+
+      <div class="row p-1 col-5">
+        <a href="/task31" class="btn btn-primary">Task 3.1</a>
+      </div> 
+      <div class="col-6 p-1 m-2"> - Завдання 3.1</div>
+
+      <div class="row p-1 col-5">
+        <a href="/shophome" class="btn btn-primary">Shop home</a>
+      </div> 
+      <div class="col-6 p-1 m-2"> - Магазин додому</div>
+      
+      <div class="row p-1 col-5">
+        <a href="/shoporder" class="btn btn-primary">Shoporder</a>
+      </div> 
+      <div class="col-6 p-1 m-2"> - Замовлення в магазині</div>
+      
+      <div class="row p-1 col-5">
+        <a href="/shopcart" class="btn btn-primary">Shopcart</a>
+      </div> 
+      <div class="col-6 p-1 m-2"> - Кошик</div>
+      
+      <div class="row p-1 col-5">
+        <a href="/shopreview" class="btn btn-primary">Shop review</a>
+      </div> 
+      <div class="col-6 p-1 m-2"> - Огляд магазину</div>
+
+      <div class="row p-1 col-5">
+        <a href="/index" class="btn btn-primary">List of page</a>
+      </div> 
+      <div class="col-6 p-1 m-2"> - Ця сторінка</div> --}}
+
+      <h5 class="mt-5">{{subtask}}</h5>
+      {{#each section2}}
+        <div class="row p-1 col-5">
+          <a href="{{link}}" class="btn btn-primary">{{nameb}}</a>
+        </div> 
+        <div class="col-6 p-1 m-2 "> - {{nameb}}</div>
+      {{/each}}
+
+    </div>
+
+
+  </section>
+  
 </div>
 
 {{!-- 
